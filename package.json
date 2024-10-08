@@ -1,0 +1,18 @@
+{
+  "name": "@eda-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:shared && npm run build:producer && npm run build:server",
+    "build:shared": "tsc shared/",
+    "build:producer": "tsc producer/",
+    "build:server": "tsc server/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "kafkajs": "^2.2.4"
+  }
+}

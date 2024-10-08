@@ -1,0 +1,27 @@
+{
+  "name": "@eda-site/server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server/src/index.js",
+    "build:start": "npm run build && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@eda-site/shared": "../shared",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "typescript": "^5.6.2",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/express-session": "^1.18.0",
+    "@types/node": "^22.7.5",
+    "@types/ws": "^8.5.12"
+  }
+}
