@@ -1,27 +1,28 @@
 (function () {
   // Content elements
   const contentEl = document.getElementById('content');
+  const websocketStatusEl = document.getElementById('websocket-status')
+  const websocketMessagesLogEl = document.getElementById('websocket-messages-log')
   
-  function addContent(paragraphString) {
-    const contentParEl = document.createElement('p');
-    contentParEl.innerText = paragraphString;
-    contentEl.appendChild(contentParEl);
+  function showWebsocketStatus(statusString) {
+    websocketStatusEl.innerText = statusString;
   }
 
-  function newContent(paragraphStrings) {
-    contentEl.innerHTML = null;
-    paragraphStrings.forEach(ps => addContent(ps));
+  function addMessageLog(paragraphString) {
+    const logDate = new Date();
+    const logParagraphEl = document.createElement('p');
+    // Prepends date logged to the message text
+    logParagraphEl.innerText = `[${logDate.toISOString()}] ${paragraphString}`;
+    websocketMessagesLogEl.appendChild(logParagraphEl);
   }
 
   // Websocket
   let ws = new WebSocket(`ws://${location.host}`);
   ws.addEventListener('open', () => {
-    console.log('WebSocket connected.');
-    newContent(['WebSocket connected!'])
-    // contentParEl.innerText = 'WebSocket connected.';
+    showWebsocketStatus('WebSocket connected!');
   });
   ws.addEventListener('message', e => {
     const messageText = e.data;
-    addContent(messageText);
+    addMessageLog(messageText);
   });
 })();
