@@ -8,10 +8,10 @@
     "build:producer": "tsc producer/",
     "build:server": "tsc server/"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["eda", "event-driven-architecture"],
+  "author": "David Cunningham",
   "license": "ISC",
-  "description": "",
+  "description": "Event-Driven Architecture Site",
   "dependencies": {
     "kafkajs": "^2.2.4"
   }

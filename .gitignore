@@ -1,3 +1,6 @@
 node_modules/
 dist/
 SCRAP/
+
+kafka-dev-scripts/lib
+kafka-dev-scripts/alpha

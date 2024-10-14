@@ -1,16 +1,15 @@
 {
   "name": "@eda-site/server",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "build": "rm -rf ./dist/ && tsc",
     "start": "node dist/server/src/index.js",
     "build:start": "npm run build && npm start"
   },
   "keywords": [],
-  "author": "",
+  "author": "David Cunningham",
   "license": "ISC",
-  "description": "",
+  "description": "EDA Site - Server",
   "dependencies": {
     "@eda-site/shared": "../shared",
     "express": "^4.21.1",

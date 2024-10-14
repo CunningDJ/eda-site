@@ -3,10 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf ./dist/ && tsc",
+    "start": "node dist/producer/src/index.js",
+    "build:start": "npm run build && npm start"
   },
-  "keywords": [],
-  "author": "",
+  "author": "David Cunningham",
   "license": "ISC",
-  "description": ""
+  "description": "EDA Site - Producer",
+  "dependencies": {
+    "@eda-site/shared": "../shared",
+    "typescript": "^5.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5"
+  }
 }
