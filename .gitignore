@@ -2,5 +2,7 @@ node_modules/
 dist/
 SCRAP/
 
+.DS_Store
+
 kafka-dev-scripts/lib
 kafka-dev-scripts/alpha
