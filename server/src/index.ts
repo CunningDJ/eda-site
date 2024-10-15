@@ -37,7 +37,7 @@ const main = async () => {
   const httpServer = new http.Server(expressApp);
 
   httpServer.on('upgrade', (serverReq, socket, head) => {
-    // TODO: fix any typing
+    // TODO: fix 'any' typing
     expressSessionParser(serverReq as any, {} as any, () => {
       const req = serverReq as unknown as Express.Request;
       if (!req.session.user) {
@@ -48,7 +48,7 @@ const main = async () => {
       }
       wss.handleUpgrade(serverReq, socket, head, (ws) => {
         console.log(req.session)
-        // emit a 'connection' event (handler above) with the create WebSocket and current session
+        // Emit a 'connection' event (handler above) with the create WebSocket and current session
         wss.emit('connection', ws, req)
       });
     });
@@ -70,7 +70,7 @@ const main = async () => {
     ws.on('error', console.error);
 
     ws.on('message', (message: string) => {
-      // TODO: receive message logic
+      // Client message received logic
     });
 
     await kafkaConsumer.run({
@@ -78,7 +78,7 @@ const main = async () => {
         const key = message.key?.toString();
         const value = message.value?.toString();
         if (topic === TOPIC.counter) {
-          // Processing
+          // Processing 'counter' message
           ws.send(`Counter Received: k:${key} v:${value}`)
         }
       },
