@@ -1,0 +1,11 @@
+[package]
+name = "rust_ws_consumer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tungstenite = "0.24.0"
+
+[[bin]]
+name = "rust_ws_consumer"
+path = "src/main.rs"
