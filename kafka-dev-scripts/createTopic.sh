@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./constants.sh
+source ./globals.sh
 
 if [ "$#" -ne 1 ]; then
     echo "Usage: ./createTopic.sh TOPIC_NAME"
@@ -9,4 +9,7 @@ fi
 
 topic_name="$1"
 
-$KAFKABIN/kafka-topics.sh --create --topic "$topic_name" --bootstrap-server localhost:$KAFKA_PORT
+docker_container_id="$(getKafkaContainerId)"
+
+echo "Creating topic: $topic_name"
+createKafkaTopic "$topic_name"
