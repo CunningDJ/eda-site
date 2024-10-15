@@ -2,10 +2,11 @@
 This was made as a learning project to experiment with event-driven architecture patterns.  It uses **Kafka** as the message delivery system, and includes **server** that consumes messages and pushes them across a websocket to a simple frontend (which it also serves) that logs messages in the UI as received, and a producer that pushes messages to Kafka for the server to subscribe to.
 
 ## Quickstart
-1. After pulling down the repo, `cd kafka-dev-scripts` and run `./start.sh` to set up the Kafka pipeline.
-2. `cd server/` (at top-level) and `npm install`.  Then `npm run build:start` to build and start the server.
-3. Open `localhost:8080` in your browser to see the website now being served.  It shows a log of what messages are pushed to it from the `server` via a websocket
-4. In a **separate** terminal window, `cd producer`, `npm install` and `npm run build:start` to start the producer.  If the Kafka set up correctly in step 1, then this should run without an issue, and you should start seeing new messages being logged in the browser app.
+1. Install all node modules: `npm run install:all`
+2. Set up and run Kafka: `npm run start:kafka`
+3. Build and run the server/consumer: `npm run build:start:server`
+4. Open the website at [localhost:8080](http://localhost:8080) in your browser.  Note the logging of messages received.
+5. In a separate terminal window, build and run the producer: `npm run build:start:producer`.  Note how counters are now being logged on the website.
 
 **You now should also be able to open the browser app on a separate device on your local network** if your machine doesn't have a firewall, via `[serving machine's IP]:8080`
 

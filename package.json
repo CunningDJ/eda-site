@@ -1,12 +1,15 @@
 {
-  "name": "@eda-site",
+  "name": "@eda-site/all",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build:shared && npm run build:producer && npm run build:server",
-    "build:shared": "tsc shared/",
-    "build:producer": "tsc producer/",
-    "build:server": "tsc server/"
+    "build:all": "npm run build:producer && npm run build:server",
+    "install:all": "npm install && cd shared/ && npm install && cd ../server && npm install && cd ../producer && npm install",
+    "start:kafka": "cd kafka-dev-scripts && ./start.sh",
+    "build:producer": "cd producer/ && npm run build",
+    "build:server": "cd server/ && npm run build",
+    "build:start:server": "cd server/ && npm run build:start",
+    "build:start:producer": "cd producer/ && npm run build:start"
   },
   "keywords": ["eda", "event-driven-architecture"],
   "author": "David Cunningham",
