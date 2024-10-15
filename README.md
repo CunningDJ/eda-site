@@ -10,8 +10,12 @@ This was made as a learning project to experiment with event-driven architecture
 
 **You now should also be able to open the browser app on a separate device on your local network** if your machine doesn't have a firewall, via `[serving machine's IP]:8080`
 
-There you have it!  You are running a full event-driven system!  Initially, the producer just has an interval counter number that it pushes to Kafka, but you can play with any part of this system, event the Kafka setup, to see how things work and affect each other.  
+There you have it!  You are running a full event-driven system!  Initially, the producer just has an interval counter number that it pushes to Kafka, but you can play with any part of this system to see how things work and affect each other:
+* The [server/consumer](server/)
+* The [producer](producer/)
+* The [website](server/public/)
+* or even the [Kafka setup](kafka-dev-scripts/)
 
-For example, an initial setting to look at in the  `server`/consumer logic is the `fromBeginning` parameter when setting up the consumer.  This is currently set to false, but if it's set to `true`, it will grab all of the counter numbers that were published by the consumer before the consumer started running and print them all at once on the web browser (if the browser is running first).  However, if this setting is `true` but the browser is opened after the server is started, it will only see the newest counters.
+For example, an initial setting to look at in the  server/consumer logic is the `fromBeginning` parameter when setting up the consumer.  This is currently set to false, but if it's set to `true`, it will grab all of the counter numbers that were published by the consumer before the consumer started running and print them all at once on the web browser (if the browser is running first).  However, if this setting is `true` but the browser is opened after the server is started, it will only see the newest counters.
 
-There is also session logic in the server (using `express-session`), allowing to play with user state and session management and decide what consumed information to give by user, or when to start information or do other things.
+There is also session logic in the server (using `express-session`), allowing you to play with user state and session management and decide what consumed information to give by user, or when to start information or do other things.
