@@ -2,6 +2,7 @@
 This was made as a learning project to experiment with event-driven architecture patterns.  It uses **Kafka** as the message delivery system, and includes **server** that consumes messages and pushes them across a websocket to a simple frontend (which it also serves) that logs messages in the UI as received, and a producer that pushes messages to Kafka for the server to subscribe to.
 
 ## Quickstart
+0. [Install NodeJS](https://nodejs.org/en/download/package-manager)
 1. Install all node modules: `npm run install:all`
 2. Set up and run Kafka: `npm run start:kafka`
 3. Build and run the server/consumer: `npm run build:start:server`
