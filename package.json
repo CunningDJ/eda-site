@@ -6,6 +6,7 @@
     "build:all": "npm run build:producer && npm run build:server",
     "install:all": "npm install && cd shared/ && npm install && cd ../server && npm install && cd ../producer && npm install",
     "start:kafka": "cd kafka-dev-scripts && ./start.sh",
+    "stop:kafka": "cd kafka-dev-scripts && ./stop.sh",
     "build:producer": "cd producer/ && npm run build",
     "build:server": "cd server/ && npm run build",
     "build:start:server": "cd server/ && npm run build:start",
